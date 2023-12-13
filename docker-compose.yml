@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+    pointer-email-boilerplate:
+        image: pointer-email-boilerplate:latest
+        container_name: pointer-email-boilerplate
+        environment:
+            - test=value
+        build:
+            context: .
+            target: development # Target is a form os docker compose define how get the part of build based in env
+            dockerfile: Dockerfile
+        ports:
+            - 8010:8010 # Change the port according to the need of the project
